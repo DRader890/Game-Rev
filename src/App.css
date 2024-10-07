@@ -1,0 +1,51 @@
+.games {
+  display: flex;
+  flex-direction: column;
+}
+
+.games-container {
+  margin: 1rem 5rem 0rem 5rem;
+}
+
+.games-container > h2 {
+  margin-top: 0;
+}
+
+.game {
+  border: 1px solid #ccc; /* Adds a light gray border around the box */
+  background-color: #1c1c1c; /* Dark background for the box */
+  padding: 20px; /* Adds some space inside the box */
+  margin: 20px 0; /* Adds space between each box */
+  border-radius: 10px; /* Rounds the corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+  display: flex; /* Optional: Allows items inside to be flexed */
+  flex-direction: column; /* Ensures items are stacked vertically */
+  align-items: center; /* Centers content horizontally */
+}
+
+
+/* This targets all the child elements of the element with the .game class */
+.game > * {
+  padding: 0.5rem;
+}
+
+.game-info {
+  color: var(--outline);
+  font-family: "Roboto", sans-serif;
+}
+
+.filter-btn {
+  margin-right: 2rem;
+}
+
+.game-img {
+  width: 300px; /* Sets the image width */
+  height: auto; /* Maintains the aspect ratio */
+  max-width: 100%; /* Ensures the image doesn't overflow its container */
+  border-radius: 8px; /* Optional: Rounds the corners */
+  object-fit: cover; /* Ensures the image covers the defined width/height without distortion */
+}
+  body {
+  background-color: black;
+  color: white; /* Makes the text white for better contrast */
+}
