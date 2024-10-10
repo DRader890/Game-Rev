@@ -17,16 +17,16 @@ export const GameList = () => {
   }, []);
 
   // Search games based on the search input and selected category
-  useEffect(() => {
+  useEffect(() => { //This is used to filter the games based on two criteria:
     const foundGames = games.filter((game) => {
-      const matchesSearch = game.name.toLowerCase().includes(searchedGame.toLowerCase());
-      const matchesCategory = selectedCategory ? game.category.name === selectedCategory : true; // Adjusted to access category name
-      return matchesSearch && matchesCategory; // Return games that match both conditions
+      const matchesSearch = game.name.toLowerCase().includes(searchedGame.toLowerCase()); //This checks whether the game's name (converted to lowercase) includes the search string (also in lowercase) from the searchedGame state.
+      const matchesCategory = selectedCategory ? game.category.name === selectedCategory : true; // matches the games category with the category chosen by the user
+      return matchesSearch && matchesCategory; // Return games that match both or one conditions
     });
 
-    console.log("Filtered games:", foundGames); // Debugging statement
+    
     setFilteredGames(foundGames);
-  }, [searchedGame, selectedCategory, games]);
+  }, [searchedGame, selectedCategory, games]); // sets that to the filtered games state which is an array
 
   return (
     <div className="game-container">
@@ -35,7 +35,7 @@ export const GameList = () => {
       <div>
         <input
           onChange={(event) => {
-            setSearchedGame(event.target.value);
+            setSearchedGame(event.target.value); // event shows the user is typing, target shows the user is changing it, value sets what the user is typing to value
           }}
           type="text"
           placeholder="Search Games"

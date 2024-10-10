@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getGameById, updateGame } from "../collect/collectGames"; // Assuming these functions exist
-import { getCategories } from "../collect/collectCategories"; // Make sure to import the function to fetch categories
+import { getGameById, updateGame } from "../collect/collectGames"; 
+import { getCategories } from "../collect/collectCategories"; 
 
 export const EditPostForm = ({ currentUser }) => {
   const [game, setGame] = useState({ img: "", name: "", review: "", categoryId: "" });
@@ -23,7 +23,7 @@ export const EditPostForm = ({ currentUser }) => {
       };
 
       // Update the game
-      updateGame(gameId, updatedGame) 
+      updateGame(gameId, updatedGame) //
         .then(() => {
           navigate("/post");
         });

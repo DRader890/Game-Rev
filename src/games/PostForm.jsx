@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import "../css/PostForm.css";
 import { createGame } from "../collect/collectGames";
 import { useNavigate } from "react-router-dom";
-import { getCategories } from "../collect/collectCategories"; // Assuming you have this function
+import { getCategories } from "../collect/collectCategories"; 
 
 export const PostForm = ({ currentUser }) => {
   const [game, setGame] = useState({ img: "", name: "", review: "", categoryId: "" });
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
 
-  // Fetch categories when the component mounts
+  // Fetch categories
   useEffect(() => {
     getCategories().then(setCategories); 
   }, []);
@@ -73,9 +73,9 @@ export const PostForm = ({ currentUser }) => {
             className="font-two"
             type="text"
             onChange={(event) => {
-              const postCopy = { ...game };
-              postCopy.review = event.target.value;
-              setGame(postCopy);
+              const postCopy = { ...game }; // creates a copy of the game 
+              postCopy.review = event.target.value; // user edits the part
+              setGame(postCopy); // finally sets the users new  adjustments
             }}
           />
         </div>

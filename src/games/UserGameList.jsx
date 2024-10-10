@@ -3,12 +3,12 @@ import { getAllPost } from "../collect/collectedPost";
 import "../css/Button.css";
 import { useNavigate } from "react-router-dom";
 
-export const UserGameList = ({ currentUser }) => {
+export const UserGameList = ({ currentUser }) => { // prop passed that contains  the value of the current  users id
   const [post, setPost] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    getAllPost(currentUser.id).then((postArray) => {
+    getAllPost(currentUser.id).then((postArray) => { // fetches data  that contains whoever is the current user  using  userId as a parameter
       setPost(postArray);
     });
   }, [currentUser]);
@@ -18,7 +18,7 @@ export const UserGameList = ({ currentUser }) => {
       method: "DELETE",
     }).then(() => {
       // Remove the deleted post from the state
-      setPost((prevPost) => prevPost.filter((game) => game.id !== gameId));
+      setPost((prevPost) => prevPost.filter((game) => game.id !== gameId)); //prevPost holds an array set before a  user deletes a post then prevPost.filter((game) => game.id !== gameId): The filter() method creates a new array that excludes the game with  that id 
     });
   };
 

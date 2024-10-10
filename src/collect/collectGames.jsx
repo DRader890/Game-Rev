@@ -17,9 +17,9 @@ export const getGameById = (gameId) => {
     .then(response => response.json());
 };
 
-export const updateGame = (gameId, updatedGame) => {
+export const updateGame = (gameId, updatedGame) => { // game we want to  update, contains new data we want to update
   return fetch(`http://localhost:8088/games/${gameId}`, {
-    method: "PUT",
+    method: "PUT", // edits the current game using its id
     headers: {
       "Content-Type": "application/json"
     },
