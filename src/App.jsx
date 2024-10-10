@@ -1,31 +1,26 @@
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import { GameList } from "./games/GameList";
-import { NavBar } from "./nav/NavBar";
-import { Login } from "./components/auth/Login"
-import { Register } from "./components/auth/Register"
-
-
-
+import { Login } from "./components/auth/Login";
+import { Register } from "./components/auth/Register";
+import { Authorized } from "./views/Authorized";
+import { ApplicationViews } from "./views/ApplicationViews";
 
 export const App = () => {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      
-      
+
       <Route
-        path="/"
+        path="*"
         element={
-          <>
-            <NavBar />
-            <Outlet />
-          </>
+          // checks if user is  authorized
+          <Authorized>
+          {/* ApplicationViews is child component of authorized */} 
+            <ApplicationViews /> 
+          </Authorized>
         }
-      >
-        <Route index element={<GameList />} />
-      </Route>
+      />
     </Routes>
   );
 };

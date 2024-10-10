@@ -1,0 +1,28 @@
+.btn {
+    color: white;
+    background-color: black;
+}
+.btn-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Align buttons to the right */   
+}
+.holder {
+    height: 80px;
+}
+.font {
+    height: 30px;
+    font-size: 20px;
+}
+
+label.font {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.font-two {
+    height: 30px;
+    font-size: 20px;
+    color: black;
+}

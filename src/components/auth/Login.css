@@ -5,7 +5,31 @@
   align-items: center;
   justify-content: center
 }
+a.game-info {
+  color: white;
+}
 
+/* General container styling for centering with black background */
+.container-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black; /* Black background */
+}
 
+/* Form styling to match login with white text */
+.form-login {
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  width: 300px;
+  color: white; /* White text */
+}
+
+h1, h2 {
+  color: white; /* Ensure headers are white */
+  margin-bottom: 1rem;
+}
 
 

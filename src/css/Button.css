@@ -1,0 +1,16 @@
+.button {
+    background-color: black;
+    color: white;
+    outline: 2px solid white;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Align buttons to the right */   
+}
+
+.font {
+    color: white;
+    width: 600px
+}

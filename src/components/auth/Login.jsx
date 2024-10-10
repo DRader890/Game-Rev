@@ -32,8 +32,8 @@ export const Login = () => {
     <main className="container-login">
       <section  className="container-login">
         <form className="form-login" onSubmit={handleLogin}>
-          <h1>GameRev</h1>
-          <h2>Please sign in</h2>
+          <h1 className="game-info">GameRev</h1>
+          <h2 className="game-info">Please sign in</h2>
           <fieldset>
             <div className="form-group">
               <input
@@ -57,7 +57,7 @@ export const Login = () => {
         </form>
       </section>
       <section>
-        <Link to="/register">Not a member yet?</Link>
+        <Link to="/register" className="game-info">Not a member yet?</Link>
       </section>
     </main>
   )
